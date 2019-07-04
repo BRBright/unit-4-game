@@ -19,10 +19,17 @@ p:first-child {
 p:last-child {
     padding-bottom: 10px;
 }
+img {
+    padding-left: 10px;
+}
+img:first-child {
+    padding-left: 10px;
+}
 .rules {
     background: bisque;
     margin: 10px;
     width: 500px;
+    padding-bottom: 50px;
 }
 .score {
     background: teal;
