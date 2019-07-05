@@ -1,37 +1,25 @@
-var targetNumber = 53;
+$(document).ready(function() {
 
-$("#number-to-guess").text(targetNumber);
+    var goalNum = getRandomNum();
+    var randomsSmall = 0;
+    var sum = 0;
 
-var counter = 0;
+    function getRandomNumSmall(){
+        return Math.floor(Math.random() * 10);
+    }
+    function getRandomNum(){
+        return Math.floor(Math.random() * 100);
+    }
 
-for (var i = 0; i < numberOptions.length; i++) {
-
-  var imageCrystal = $("<img>");
-
-  imageCrystal.addClass("crystal-image");
-
-  imageCrystal.attr("src", "");
-
-  imageCrystal.attr("data-crystalvalue", numberOptions[i]);
-
-  $("#crystals").append(imageCrystal);
-}
-
-$(".crystal-image").on("click", function() {
-
-  var crystalValue = ($(this).attr("data-crystalvalue"));
-  crystalValue = parseInt(crystalValue);
-  
-  counter += crystalValue;
-
-  alert("New score: " + counter);
-
-  if (counter === targetNumber) {
-    alert("You win!");
-  }
-
-  else if (counter >= targetNumber) {
-    alert("You lose!!");
-  }
-
+    document.getElementById("random-number").innerHTML = goalNum;
+    
+    $(".crystal-image").on("click", function(){
+        alert("you clicked")
+        randomsSmall = getRandomNumSmall();
+        return randomsSmall;
+    })
+    
+    document.getElementById("score").innerHTML = sum;
+    
+    return sum = sum + randomsSmall;
 });
