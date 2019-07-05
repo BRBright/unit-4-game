@@ -13,13 +13,15 @@ $(document).ready(function() {
 
     document.getElementById("random-number").innerHTML = goalNum;
     
-    $(".crystal-image").on("click", function(){
-        alert("you clicked")
-        randomsSmall = getRandomNumSmall();
-        return randomsSmall;
-    })
-    
-    document.getElementById("score").innerHTML = sum;
-    
-    return sum = sum + randomsSmall;
+    while(sum !== goalNum){    
+        $(".crystal-image").on("click", function(){
+            alert("you clicked")
+            randomsSmall = getRandomNumSmall();
+            return randomsSmall;
+        })
+        
+        document.getElementById("score").innerHTML = sum;
+
+        return sum = sum + randomsSmall;
+    }
 });
