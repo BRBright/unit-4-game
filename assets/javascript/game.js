@@ -10,18 +10,13 @@ $(document).ready(function() {
     function getRandomNum(){
         return Math.floor(Math.random() * 100);
     }
-
-    document.getElementById("random-number").innerHTML = goalNum;
     
-    while(sum !== goalNum){    
+    document.getElementById("random-number").innerHTML = goalNum;
+       
         $(".crystal-image").on("click", function(){
             alert("you clicked")
             randomsSmall = getRandomNumSmall();
-            return randomsSmall;
+            console.log(randomsSmall);
         })
-        
         document.getElementById("score").innerHTML = sum;
-
-        return sum = sum + randomsSmall;
-    }
 });
