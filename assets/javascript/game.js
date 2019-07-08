@@ -20,8 +20,10 @@ $(document).ready(function() {
             var randomsSmall = getRandomNumSmall();
             sum = sum + randomsSmall;
             $('#score').html('<h2>' + sum + '</h2>')
-            if(sum < goalNum){
-            console.log('Keep Going')
+            if(sum === goalNum){
+                win++;
+                alert('You Win!')
+                $('#loss').html('<h2>'+ "Wins: " + win + '</h2>')
             }
             else if (sum > goalNum) {
                 loss++;
