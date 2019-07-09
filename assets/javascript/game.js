@@ -11,25 +11,32 @@ $(document).ready(function() {
     function getRandomNum(){
         return Math.floor(Math.random() * 100);
     }
+    function reset() {
+        goalNum = getRandomNum();
+        sum = 0;
+        $('#random-number').html('<h2>' + goalNum + '</h2>')
+    }
     
     $('#random-number').html('<h2>' + goalNum + '</h2>')
     $('#win').html('<h2>'+ "Wins: " + win + '</h2>')
     $('#loss').html('<h2>'+ "Losses: " + loss + '</h2>')
     
-        $(".crystal-image").on("click", function(){
-            var randomsSmall = getRandomNumSmall();
-            sum = sum + randomsSmall;
-            $('#score').html('<h2>' + sum + '</h2>')
-            if(sum === goalNum){
-                win++;
-                alert('You Win!')
-                $('#win').html('<h2>'+ "Wins: " + win + '</h2>')
-            }
-            else if (sum > goalNum) {
-                loss++;
-                alert('You loose')
-                $('#loss').html('<h2>'+ "Losses: " + loss + '</h2>')
-            }
-        })
+    $(".crystal-image").on("click", function(){
+        var randomsSmall = getRandomNumSmall();
+        sum = sum + randomsSmall;
+        $('#score').html('<h2>' + sum + '</h2>')
+        if(sum === goalNum){
+            win++;
+            alert('You Win!')
+            $('#win').html('<h2>'+ "Wins: " + win + '</h2>')
+            reset();
+        }
+        else if (sum > goalNum) {
+            loss++;
+            alert('You loose')
+            $('#loss').html('<h2>'+ "Losses: " + loss + '</h2>')
+            reset();
+        }
+    })
     
 });
