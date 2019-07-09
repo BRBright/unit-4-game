@@ -23,7 +23,7 @@ $(document).ready(function() {
             if(sum === goalNum){
                 win++;
                 alert('You Win!')
-                $('#loss').html('<h2>'+ "Wins: " + win + '</h2>')
+                $('#win').html('<h2>'+ "Wins: " + win + '</h2>')
             }
             else if (sum > goalNum) {
                 loss++;
